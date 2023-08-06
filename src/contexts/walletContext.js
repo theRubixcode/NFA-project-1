@@ -9,7 +9,6 @@ export const walletContext = createContext({
 
 const WalletContext = ({ children }) => {
   const [account, setAccount] = useState('');
-  // const { account } = useContext(walletContext);
 
   const value = { account, setAccount }
 
