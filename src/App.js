@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import { Route, Routes } from "react-router-dom";
+import ErrorPage from "./components/ErrorPage";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Home from "./components/Pages/Home";
+import Spacing from "./components/Spacing";
+import { ToastContainer } from 'react-toastify';
+import WalletContext from "./contexts/walletContext";
+import { DiscordAuth } from "./contexts/discordContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <DiscordAuth>
+        <WalletContext>
+          <Header />
+          <Spacing lg='80' md='80' />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+          <Footer />
+          <ToastContainer />
+        </WalletContext>
+      </DiscordAuth>
+    </>
   );
 }
 

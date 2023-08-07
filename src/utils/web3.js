@@ -24,8 +24,20 @@ const contractData = async () => {
   }
 }
 
+const totalSupply = async () => {
+  if (window.ethereum) {
+    const provider = new ethers.BrowserProvider(window.ethereum);
+    // const signer = provider.getSigner();
+    const contract = new ethers.Contract(contractAddress, abi, provider);
+
+    const count = await contract.totalSupply();
+    return count;
+  }
+}
+
 export const verifyAllowlist = async (accounts) => {
   const proof = addressProof(accounts);
+  const provider = new ethers.BrowserProvider(window.ethereum);
   const contract = new ethers.Contract(contractAddress, abi, provider);
 
   const status = await contract.verifyAllowlist(accounts, proof);
@@ -40,17 +52,6 @@ export const _claimStatus = async (accounts) => {
 
   const status = await contract.checkClaimStatus(accounts);
   return status;
-}
-
-export const totalSupply = async () => {
-  if (window.ethereum) {
-    const provider = new ethers.BrowserProvider(window.ethereum);
-    // const signer = provider.getSigner();
-    const contract = new ethers.Contract(contractAddress, abi, provider);
-
-    const count = await contract.totalSupply();
-    return count;
-  }
 }
 
 export const preSale = async () => {
@@ -104,3 +105,5 @@ export const preSale = async () => {
     console.log(error)
   }
 }
+
+export const supply = await totalSupply();
