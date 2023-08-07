@@ -14,7 +14,6 @@ export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  const targetDate = new Date('2023-07-25T12:00:00').getTime();
 
   const [popup, setPopup] = useState(false);
   const [txData, setTxData] = useState('');

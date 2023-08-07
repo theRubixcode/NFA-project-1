@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { Icon } from '@iconify/react';
-import { Link, redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Modal from '../Modal';
-import ModeSwitch from '../ModeSwitch';
 import Section from '../Section';
 import './header.scss'
 import { walletContext } from '../../contexts/walletContext'
-import { DiscordAuthContext, SignInButton, SignOutButton, UserInfo } from "../../contexts/discordContext";
+import { DiscordAuthContext } from "../../contexts/discordContext";
 
 
 export default function Header() {
@@ -38,7 +37,6 @@ export default function Header() {
               </Section>
               <Section className="cs-main_header_right">
                 <Section className="cs-toolbox">
-                  <ModeSwitch />
                   {account === '' ?
                     <Modal modalType='connect' btnText='Connect' btnIcon /> :
                     <Section tag='span' className="cs-btn cs-btn_filed cs-accent_btn">

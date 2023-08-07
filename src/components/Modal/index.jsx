@@ -2,7 +2,6 @@ import { Icon } from '@iconify/react'
 import React, { useState } from 'react'
 import ConnectCard from '../ConnectCard';
 import Section from '../Section';
-import Status from '../Status';
 
 export default function Modal({ modalType, btnText, btnIcon }) {
   const [modal, setModal] = useState(false);

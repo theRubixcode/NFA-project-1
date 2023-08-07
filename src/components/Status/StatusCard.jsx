@@ -1,10 +1,9 @@
 import React from 'react'
 import Section from '../Section';
-import Status from './index';
 import { Icon } from '@iconify/react';
 import Button from '../Button';
 import Spacing from '../Spacing'
-import { SignInButton } from '../../contexts/discordContext';
+import { RoleClaimButton } from '../../contexts/discordContext';
 
 
 export default function StatusCard({ tx }) {
@@ -36,7 +35,7 @@ export default function StatusCard({ tx }) {
         <Icon icon="skill-icons:twitter" />
       </Button>
       <Spacing lg='25' md='25' />
-      <SignInButton />
+      <RoleClaimButton />
     </Section>
   )
 }

@@ -1,5 +1,5 @@
 import { toast } from 'react-toastify';
-import { contractAddress, abi } from '../contract/constant';
+import { contractAddress, abi } from '../contracts/constants';
 import { addressProof } from './merkleTree';
 
 const { ethers } = require('ethers');
@@ -64,7 +64,7 @@ export const preSale = async () => {
 
   let status = await verifyAllowlist(address);
   let claimStat = await _claimStatus(address);
-  let totalSupply = await totalSupply();
+  let supply = await totalSupply();
 
   try {
     if (!status) {
@@ -77,7 +77,7 @@ export const preSale = async () => {
       return;
     }
 
-    if (totalSupply > 769) {
+    if (supply > 769) {
       toast.error('Oops! We are out of stock.');
       return;
     }

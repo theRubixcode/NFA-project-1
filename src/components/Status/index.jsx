@@ -1,29 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import Section from '../Section';
-import Status from './index';
-import { Icon } from '@iconify/react';
-import Button from '../Button';
-import Spacing from '../Spacing'
 import StatusCard from './StatusCard';
 import Confetti from 'react-confetti';
 
 export default function StatusPop({ tx }) {
   const [modal, setModal] = useState(true);
-  const [playMusic, setPlayMusic] = useState(true);
-  const audioRef = useRef();
 
   const handlePopUp = () => {
     setModal(!modal);
-    setPlayMusic(!playMusic);
   }
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (audio && playMusic) {
-      audio.play()
-        .catch(err => console.log(err));
-    }
-  }, []);
 
   return (
     <Section className={modal ? "cs-modal active" : "cs-modal"}>
@@ -39,7 +24,6 @@ export default function StatusPop({ tx }) {
           </Section>
         </Section>
       </Section>
-      {/* {playMusic && <audio ref={audioRef} src="music/pop-music.mp3" />} */}
       <Confetti />
     </Section>
   )

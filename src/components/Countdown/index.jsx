@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import Spacing from "../Spacing";
 import Section from "../Section";
 import FunFact from "../FunFact";
-import { _fruitClaim } from "../../utils/web3";
+import { preSale } from "../../utils/web3";
 import Button from "../Button";
 import { toast } from "react-toastify";
 
@@ -28,13 +28,10 @@ const Countdown = ({ onTransactionComplete }) => {
     return { days, hours, minutes, seconds };
   });
 
-  const [transactionComplete, setTransactionComplete] = useState(false);
-
   const useClaimHandle = async () => {
-    const tx = await _fruitClaim();
+    const tx = await preSale();
     if (tx) {
       onTransactionComplete(tx);
-      setTransactionComplete(true);
       toast.done("You are all set!");
     }
   };

@@ -73,7 +73,7 @@ export const DiscordAuth = ({ children }) => {
   );
 };
 
-export const roleClaimButton = () => {
+export const RoleClaimButton = () => {
   const { handleSignIn } = useContext(DiscordAuthContext);
 
   return (
