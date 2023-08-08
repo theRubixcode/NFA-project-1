@@ -75,7 +75,7 @@ const Countdown = ({ onTransactionComplete }) => {
   if (!countdownFinished) {
     return (
       <div className="container">
-        <FunFact title="Preclaim Timer" />
+        <FunFact title="Pre-Sale Ends In" />
         <Spacing lg="25" md="25" />
         <div style={{ color: "goldenrod" }} className="row">
           <div className="col-md-3">
@@ -114,7 +114,7 @@ const Countdown = ({ onTransactionComplete }) => {
         <div className="col-md-12 text-center">
           <FunFact title="PreClaim Timer" />
           <Spacing lg="25" md="25" />
-          <h1 style={{ color: "goldenrod" }}> Claim Complete</h1>
+          <h1 style={{ color: "goldenrod" }}> Sale Ended </h1>
           <p>Event has already occurred</p>
           <Spacing lg="25" md="25" />
           <Button btnText="Ended">

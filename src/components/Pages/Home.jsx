@@ -91,7 +91,7 @@ export default function Home() {
             </Section>
           </Section>
           <Section className="col-lg-6 cs-card cs-style3 ">
-            <Section className='cs-dark_bg text-center cs-radius_10'>
+            <Section className='cs-light_bg text-center cs-radius_10'>
               <Spacing lg='25' md='25' />
               <Countdown onTransactionComplete={handlePopup} />
               <Spacing lg='25' md='25' />
