@@ -31,12 +31,12 @@ const totalSupply = async () => {
     const contract = new ethers.Contract(contractAddress, abi, provider);
 
     const count = await contract.totalSupply();
-    return count;
+    return parseInt(count);
   }
 }
 
-export const verifyAllowlist = async (accounts) => {
-  const proof = addressProof(accounts);
+export const verify = async (accounts) => {
+  const proof = await addressProof(accounts);
   const provider = new ethers.BrowserProvider(window.ethereum);
   const contract = new ethers.Contract(contractAddress, abi, provider);
 
@@ -61,8 +61,9 @@ export const preSale = async () => {
 
   const contract = data[0];
   const address = data[1];
+  const proof = await addressProof(address);
 
-  let status = await verifyAllowlist(address);
+  let status = await verify(address);
   let claimStat = await _claimStatus(address);
   let supply = await totalSupply();
 
@@ -84,7 +85,7 @@ export const preSale = async () => {
 
     toast.loading('Transaction is under process...')
 
-    const transactionResponse = await contract.fruitClaim({
+    const transactionResponse = await contract.presale(proof, {
       value: ethers.parseEther("0.2"),
     });
 
@@ -101,6 +102,7 @@ export const preSale = async () => {
         return;
       })
   } catch (error) {
+    toast.dismiss();
     toast.error('Something went wrong.');
     console.log(error)
   }

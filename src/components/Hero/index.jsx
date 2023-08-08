@@ -5,7 +5,7 @@ import Button from '../Button';
 import './hero.scss';
 import Section from '../Section';
 import { Link } from 'react-scroll';
-import { _claimStatus, verifyAllowlist } from '../../utils/web3';
+import { _claimStatus, verify } from '../../utils/web3';
 
 // import Modal from '../Modal';
 import { walletContext } from '../../contexts/walletContext';
@@ -21,14 +21,14 @@ export default function Hero({ title, mintNumber, mintMax, mintPrice, mintDeathL
 
     toast.loading('Your status is checking! please wait...');
 
-    let verify = await verifyAllowlist(account);
+    let verifyStatus = await verify(account);
     let claimStats = await _claimStatus(account);
 
     if (claimStats) {
       toast.dismiss();
       toast.success('You have already claimed!');
       return;
-    } else if (verify) {
+    } else if (verifyStatus) {
       toast.dismiss();
       toast.success('You are eligible!');
       return;

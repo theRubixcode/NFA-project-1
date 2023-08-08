@@ -6,7 +6,7 @@ import Section from '../Section';
 import './header.scss'
 import { walletContext } from '../../contexts/walletContext'
 import { DiscordAuthContext } from "../../contexts/discordContext";
-
+import ModeSwitch from '../ModeSwitch';
 
 export default function Header() {
   const { account } = useContext(walletContext)
@@ -37,6 +37,7 @@ export default function Header() {
               </Section>
               <Section className="cs-main_header_right">
                 <Section className="cs-toolbox">
+                  <ModeSwitch />
                   {account === '' ?
                     <Modal modalType='connect' btnText='Connect' btnIcon /> :
                     <Section tag='span' className="cs-btn cs-btn_filed cs-accent_btn">

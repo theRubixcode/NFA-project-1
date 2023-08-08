@@ -8,7 +8,7 @@ import Button from "../Button";
 import { toast } from "react-toastify";
 
 const Countdown = ({ onTransactionComplete }) => {
-  const launchDate = new Date("2023-08-05T12:00:00Z").getTime();
+  const launchDate = new Date("2023-08-12T12:00:00Z").getTime();
   const now = new Date().getTime();
   const timeRemaining = launchDate - now;
 
@@ -32,7 +32,7 @@ const Countdown = ({ onTransactionComplete }) => {
     const tx = await preSale();
     if (tx) {
       onTransactionComplete(tx);
-      toast.done("You are all set!");
+      toast.success("You are all set!");
     }
   };
 

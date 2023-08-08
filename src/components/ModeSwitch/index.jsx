@@ -33,8 +33,6 @@ export default function ModeSwitch() {
 
   return (
     <Section tag='span' className="cs-icon_btn cs-mode_btn" onClick={activateMode}>
-      <Icon icon="ph:moon" className='cs-hide_dark' />
-      <Icon icon="ph:sun-bold" className='cs-hide_white' />
     </Section>
   )
 }

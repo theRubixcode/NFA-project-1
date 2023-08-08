@@ -30,7 +30,7 @@ export default function Home() {
       <Hero
         title='NFT FRIENDS <br/> ALPHA'
         mintNumber={`${supply || 243}`}
-        mintMax='777'
+        mintMax='786'
         mintPrice='0.2'
         mintDeathLine=' 31 August'
         bgUrl='/images/hero_img_3.jpeg'
@@ -79,7 +79,7 @@ export default function Home() {
         <Section className="row">
           <Section className="col-xl-5.7 col-md-6 ">
             <Section className='cs_size-23 cs-light_bg text-center cs-card cs-style3 cs-radius_10'>
-              <Section tag='p' style={{ color: '#00d4ff' }}>{`Total Supply: 777`}</Section>
+              <Section tag='p' style={{ color: '#00d4ff' }}>{`Total Supply: 786`}</Section>
             </Section>
             <Spacing lg='25' md='25' />
             <Section className='cs_size-23 cs-light_bg text-center cs-card cs-style3 cs-radius_10'>
@@ -91,7 +91,7 @@ export default function Home() {
             </Section>
           </Section>
           <Section className="col-lg-6 cs-card cs-style3 ">
-            <Section className='cs-light_bg text-center cs-radius_10'>
+            <Section className='cs-dark_bg text-center cs-radius_10'>
               <Spacing lg='25' md='25' />
               <Countdown onTransactionComplete={handlePopup} />
               <Spacing lg='25' md='25' />
