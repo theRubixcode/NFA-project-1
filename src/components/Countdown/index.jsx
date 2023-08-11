@@ -32,7 +32,6 @@ const Countdown = ({ onTransactionComplete }) => {
     const tx = await preSale();
     if (tx) {
       onTransactionComplete(tx);
-      toast.success("You are all set!");
     }
   };
 

@@ -1,4 +1,3 @@
-import { Icon } from '@iconify/react'
 import React, { useEffect, useState } from 'react'
 import Section from '../Section'
 
