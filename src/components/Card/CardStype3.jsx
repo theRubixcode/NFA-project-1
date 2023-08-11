@@ -1,5 +1,6 @@
 import React from 'react'
 import Section from '../Section'
+import './card.scss'
 
 export default function CardStype3({ number, title }) {
   return (
